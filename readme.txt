@@ -1,7 +1,7 @@
 
 
 
-MZCacheView v1.81
+MZHistoryView v1.65
 Copyright (c) 2007 - 2018 Nir Sofer
 Web site: http://www.nirsoft.net
 
@@ -10,29 +10,26 @@ Web site: http://www.nirsoft.net
 Description
 ===========
 
-MZCacheView is a small utility that reads the cache folder of
-Firefox/Mozilla/Netscape Web browsers, and displays the list of all files
-currently stored in the cache. For each cache file, the following
-information is displayed: URL, Content type, File size, Last modified
-time, Last fetched time, Expiration time, Fetch count, Server name, and
-more.
-You can easily select one or more items from the cache list, and then
-extract the files to another folder, or copy the URLs list to the
-clipboard.
+MZHistoryView is a small utility that reads the history data file
+(history.dat) of Firefox/Mozilla/Netscape Web browsers, and displays the
+list of all visited Web pages in the last days. For each visited Web
+page, the following information is displayed: URL, First visit date, Last
+visit date, Visit counter, Referrer, Title, and Host name.
+You can also easily export the history data to text/HTML/Xml file.
 
 
 
 Notice:
 =======
 
-The name of this tool was changed from MozillaCacheView to MZCacheView
-due to the obsession of Mozilla Foundation people with their registered
-trademark. I have received a threatening letter from the attorney of
-Mozilla Foundation saying that using the 'Mozilla' word inside the name
-of my software infringes their trademark rights and demanding that I'll
-change the name of this tool.
+The name of this tool was changed from MozillaHistoryView to
+MZHistoryView due to the obsession of Mozilla Foundation people with
+their registered trademark. I have received a threatening letter from the
+attorney of Mozilla Foundation saying that using the 'Mozilla' word
+inside the name of my software infringes their trademark rights and
+demanding that I'll change the name of this tool.
 In order to avoid from any trouble in the future, I decided to change the
-name of this tool to MZCacheView.
+name of this tool to MZHistoryView.
 
 
 
@@ -40,9 +37,8 @@ System Requirements
 ===================
 
 This utility works on any version of Windows, From Windows 98 to Windows
-10. You can use this utility even if Firefox/Mozilla is not installed on
-your system, as long as you have the entire cache folder that you want to
-inspect.
+10. For Firefox 64-bit, you have to download the 64-bit version of this
+tool.
 
 
 
@@ -50,273 +46,167 @@ Versions History
 ================
 
 
-* Version 1.81:
-  o Fixed issue: When pressing the Delete key while the text-box of
-    Quick Filter was in focus, MZCacheView activated the delete option
-    instead of the deleteing a character in the text-box.
-
-* Version 1.80:
-  o Added 'Collect Full Response Headers' option. When it's turned
-    on, you can use the 'Copy Full Response Header' option (Ctrl+H) to
-    copy to the clipboard the full response HTTP header sent by the
-    server.
-  o Fixed bug: For some cache items, some of the information was
-    missing because MZCacheView failed to locate the HTTP header.
-
-* Version 1.76:
-  o Fixed bug: MZCacheView displayed wrong items when sorting while
-    the 'Quick Filter' is active.
-
-* Version 1.75:
+* Version 1.65:
   o Added 'Quick Filter' feature (View -> Use Quick Filter or
     Ctrl+Q). When it's turned on, you can type a string in the text-box
-    added under the toolbar and MZCacheView will instantly filter the
-    cache table, showing only items that contain the string you typed.
-
-* Version 1.70:
-  o Fixed bug: When pressing Delete key inside the text-box of the
-    Find window, MZCacheView asked you if you want to delete the selected
-    item instead of deleting a character inside the find text-box.
-
-* Version 1.69:
-  o Fixed issue: When loading large amount of cache items, some
-    actions, like selecting items and copying selected items to the
-    clipboard were very slow.
-
-* Version 1.68:
-  o MozillaCacheView now loads the cache faster if you use the
-    date/time filtering options.
-
-* Version 1.67:
-  o Fixed bug: MozillaCacheView failed to delete cache files on the
-    new cache structure of Firefox 32.
-  o Added 'URL Length' column
-
-* Version 1.66:
-  o Fixed to find the correct item when typing the string you want to
-    search into the main List View.
-  o Added secondary sorting support: You can now get a secondary
-    sorting, by holding down the shift key while clicking the column
-    header. Be aware that you only have to hold down the shift key when
-    clicking the second/third/fourth column. To sort the first column you
-    should not hold down the Shift key.
-
-* Version 1.65:
-  o Added support for the new cache structure of Firefox 32.
+    added under the toolbar and MZHistoryView will instantly filter the
+    browsing history, showing only lines that contain the string you
+    typed.
 
 * Version 1.62:
-  o Added 'Subfolder' column.
+  o Added 64-bit version for Firefox 64-bit.
 
 * Version 1.61:
-  o Fixed bug: MozillaCacheView failed to copy the cache files if
-    'Save the files in the directory structure of the Web site' option
-    was turned on and the Web site used non-standard TCP port (Instead of
-    port 80).
-  o Fixed to display date/time values according to daylight saving
-    time settings.
+  o Added 'Auto Size Columns+Headers' option.
 
 * Version 1.60:
-  o Added 'Load only files larger than...' and 'Load only files
-    smaller than...' options. (In 'Select Cache Folder' window)
+  o Added 'Frecency' column. You can find explanation about the value
+    of this field in this Web page.
 
 * Version 1.57:
-  o MozillaCacheView crashed on some systems while reading the cache
-    files.
-  o Fixed issue: The properties and the other windows opened in the
-    wrong monitor, on multi-monitors system.
-  o Added 'Auto Size Columns+Headers' option, which allows you to
-    automatically resize the columns according to the row values and
-    column headers.
+  o Fixed the DLL loading problem on Windows XP/2003.
 
 * Version 1.56:
-  o Fixed issue: MozillaCacheView left multiple files under the temp
-    folder when extracting files compressed with gzip.
+  o MozillaHistoryView now detects the portable version of Firefox if
+    it's running in the background.
 
 * Version 1.55:
-  o MozillaCacheView now loads the cache items much faster and with
-    less memory usage, especially if you have a large amount of items in
-    the cache.
+  o Added 'URL Length' column.
+
+* Version 1.53:
+  o Fixed to display local date/time values according to daylight
+    saving time settings.
 
 * Version 1.52:
-  o Fixed MozillaCacheView to detect the correct cache folder if the
-    user changed it from Firefox config
-    (browser.cache.disk.parent_directory).
+  o Fixed a bug with displaying IDN URLs (URLs containing non-English
+    characters).
 
 * Version 1.51:
-  o Fixed bug: MozillaCacheView displayed only cache items in the
-    last few days, even if the 'Load only cache files from the last xx
-    days' option was turned off.
+  o Fixed to work with Firefox 22.
 
 * Version 1.50:
-  o Added new options in the 'Select Cache Folder' window: Load only
-    cache files from the last xx days, and Load only cache files in the
-    following time range.
-  o You can now stop the cache scanning by clicking the stop menu.
+  o Added Stop menu, which allows you to stop the loading process of
+    the Firefox history.
+  o When the 'Merge multiple items with identical URLs into one item'
+    is turned on - The 'First Visit Date' is displayed even if there is
+    only a single visit (In previous versions it remained empty).
+
+* Version 1.45:
+  o Added option to choose the correct installation folder of Firefox
+    (In the 'Select History Filename' window), for using when
+    MozillaHistoryView cannot detect the Firefox installation properly.
+  o Added /UseFirefoxFolder and /FirefoxFolder command-line options.
+
+* Version 1.44:
+  o The selected time range is now saved in the .cfg file.
+
+* Version 1.43:
+  o Increased the size of the time range controls, to allow the user
+    to choose AM or PM more easily, when AM/PM time format is defined in
+    the language settings of Windows.
+
+* Version 1.42:
+  o Added option to load only URLs with the specified title string.
+
+* Version 1.41:
+  o Added new option in the Select History Filename window: 'Merge
+    multiple items with identical URLs into one item'.
 
 * Version 1.40:
-  o Added 'Open Cache Subfolder' option (for Firefox 4.x)
-  o Added 'Open With' option.
-  o Added 'Double-Click Action' option, which allows you to choose
-    what to do when you double-click on cache item - Properties Window,
-    Open File In Cache, Open URL In Browser, Open Cache Sub-Folder, or
-    Open With...
-
-* Version 1.37:
-  o The status bar now displays the total size of selected files in
-    KB/MB. (Only existing files are accumulated)
-
-* Version 1.36:
-  o Fixed to work properly with the cache of Firefox 4 (Beta).
+  o Added option to filter the URLs according to their visit count.
 
 * Version 1.35:
-  o Added 'Open Selected Cache File' option. When you use this
-    option, the selected file is extracted into a temporary folder, and
-    then it's open with the default file viewer. The temporary
-    file/folders are automatically deleted when you close
-    MozillaCacheView.
+  o Added option to load only the URLs contain the specified strings
+    (comma-delimited list). You can use this feature to view only the
+    history of the desired Web sites.
+  o Added option to filter out the URLs contain the specified strings
+    (comma-delimited list).
 
 * Version 1.31:
+  o Fixed the memory leak problem on every refresh.
+  o Added support for Firefox 4 (Beta).
+
+* Version 1.30:
+  o Added option to specify the date/time range of the browsing
+    history that you want to view.
+  o Reduced the memory usage when loading large number of history
+    items.
+
+* Version 1.27:
+  o Fixed issue: MozillaHistoryView displayed the Advanced Options
+    dialog-box when using -file command-line option.
+  o Added /UseVisitTimeFilter and /VisitTimeFilter command-line
+    options.
+
+* Version 1.26:
   o Added 'Add Header Line To CSV/Tab-Delimited File' option. When
     this option is turned on, the column names are added as the first
     line when you export to csv or tab-delimited file.
 
-* Version 1.30:
-  o Fixed bug: /copycache failed to copy cache files stored inside
-    _CACHE_001_, _CACHE_002_, and _CACHE_003_ files.
-  o Fixed bug: For some Web sites (like Google Books), the 'Content
-    Type' column displayed wrong value.
-
-* Version 1.27:
-  o Fixed bug: MozillaCacheView failed to copy cache files because
-    the filenames contained invalid file characters (?, :, *, |, and
-    others).
-
-* Version 1.26:
-  o Add /sort option for sorting the cache list that you save from
-    command-line.
-
 * Version 1.25:
-  o Added support for saving cache files from command-line.
-
-* Version 1.21:
-  o Added new option in 'Copy Selected Cache Files': Update the
-    modified time of the copied files according to modified time in the
-    Web server.
+  o Added option to load only the history items in the last xx days.
+    This option can be useful if the loading process of the history file
+    is very slow, and you want to view only the history of the last few
+    days.
+  o Added 'Choose History File On Start' option. When this option is
+    turned on, MozillaHistoryView will ask you to choose the history file
+    before loading it.
 
 * Version 1.20:
-  o Added support for cache filter. (Display only URLs which contain
-    the specified filter strings)
+  o Added command-line options for sorting.
+
+* Version 1.18:
+  o Added AutoComplete to the history filename combo-box.
 
 * Version 1.17:
-  o Fixed bug: in some cases, MozillaCacheView crashed when loading
-    the cache.
+  o MozillaHistoryView now detects any file with .sqlite extension as
+    Firefox 3 filename.
 
 * Version 1.16:
-  o Added 'Hide Missing Cache Files' option.
-  o Fixed bug: In some systems, MozillaCacheView didn't display all
-    cache files.
+  o Improved the Firefox 3 detection.
+  o Display an error message when MozillaHistoryView failed to find
+    the dll of SQLite database.
 
 * Version 1.15:
-  o New option in 'Copy Selected Cache Files To...': Save the files
-    in the directory structure of the Web site.
+  o Fixed bug: MozillaHistoryView failed to open the history file of
+    Firefox 3 (places.sqlite) when the browser was opened.
+  o The 'Select History Filename' dialog-box is now resizable.
 
-* Version 1.12:
-  o Added AutoComplete to the cache folders combo-box
-
-* Version 1.11:
-  o Added 'Cache Control' and 'ETag' columns.
-
-* Version 1.10:
-  o New option: Remember the selected cache folder.
-
-* Version 1.09:
-  o The dialog-boxes are now resizable.
-
-* Version 1.08:
-  o The URLs in HTML report are now created as links.
-
-* Version 1.07:
-  o Added AutoComplete to 'Copy Selected Files To'.
-  o Fixed bug: The main window lost the focus when the user switched
-    to another application and then returned back to MozillaCacheView.
-
-* Version 1.06:
-  o Added support for saving as comma-delimited text file.
-
-* Version 1.05:
-  o New column: Cache Name.
-  o New column: Missing File.
-  o New option: Mark Missing Cache Files.
-  o Added new option:'Copy as new name if filename already exists'.
-  o Added new option: 'Delete Selected Cache Files' (Works only for
-    items that have a cache name).
-
-* Version 1.02:
-  o Fixed the text-length limit problem in the cache folder combo-box.
-
-* Version 1.01:
-  o Added filter by file type (application, image, text/html, video,
-    and audio)
-  o New Option: Show Zero-Lenth Files
-  o New Option: Show Files With Error Server Response.
-
-* Version 1.00 - First release.
+* Version 1.14 - Fixed bug: MozillaHistoryView failed to work with
+  Firefox 3.0.1
+* Version 1.13 - Fixed bug: Long URL were corrupted.
+* Version 1.12 - Decreased exe file size and added links in HTML report.
+* Version 1.11 - Added .sqlite filter to select file dialog-box.
+* Version 1.10 - Added support for Firefox 3.0 (places.sqlite file)
+* Version 1.05 - Fixed the text-length limit problem in the history
+  file combo-box.
+* Version 1.04 - Fixed bug: The main window lost the focus when the
+  user switched to another application and then returned back to
+  MozillaHistoryView.
+* Version 1.03 - Added support for saving as comma-delimited text file.
+* Version 1.02 - Fixed bug: MozillaHistoryView failed to read history
+  files that had one or more URLs with '(' character.
+* Version 1.01 - Fixed bug: MozillaHistoryView failed to read some
+  history files.
+* Version 1.00 - First Release.
 
 
 
-The Location Of Mozilla Cache Folder
-====================================
+Using MZHistoryView
+===================
 
-The cache folder of Mozilla Firefox is located under C:\Documents and
-Settings\[User Name]\Local Settings\Application
-Data\Mozilla\Firefox\Profiles\[Profile Name]\Cache
-The cache folder of SeaMonkey is located under C:\Documents and
-Settings\[User Name]\Local Settings\Application
-Data\Mozilla\Profiles\[Profile Name]\Cache
-For other variants of Mozilla, you may find the cache folder under
-C:\Documents and Settings\[User Name]\Application
-Data\Mozilla\Profiles\[Profile Name]\Cache
-
-
-
-Using MZCacheView
-=================
-
-MZCacheView doesn't require any installation process or additional DLL
-files. Just copy the executable file (MozillaCacheView.exe) to any folder
-you like, and run it.
-After you run it, the main window displays the list of files currently
-stored in the cache of the Mozilla/Firefox profile that you used in the
-last time. If you want to view the cache of another profile, simply use
-the 'Select Cache Folder' option (F9), and choose the desired cache
-folder.
-You can select one or more cache files from the list, and than export the
-list into text/html/xml file ('Save Selected Items' option), copy the URL
-list to the clipboard (Ctrl+U), copy the entire table of cache files
-(Ctrl+C), and then paste it to Excel or to OpenOffice spreadsheet. You
-can also extract the actual files from the cache, and save them into
-another folder, You can do that by using the 'Copy Selected Cache Files
-To' option (F4).
-
-
-
-Notice...
-=========
-
-In order to watch the latest cache files, you must close all Windows of
-Firefox, because only when you do that, Firefox saves the cache index
-files into the disk.
-
-
-
-Notice For Delete Option
-========================
-
-When you delete files from the cache, MozillaCacheView delete the cache
-files, but it doesn't delete the reference to them in the cache index
-file. This means that even after you delete files from the cache, you'll
-still see them in the list, but the 'Missing File' column will be turned
-from 'No' to 'Yes'.
+MZHistoryView doesn't require any installation process or additional DLL
+files. Just copy the executable file (MozillaHistoryView.exe) to any
+folder you like, and run it.
+After you run it, the main window displays the list of visited Web pages
+loaded from the history.dat of the Mozilla/Firefox profile that you used
+in the last time. If you want to view the content of another history
+file, simply use the 'Select History File' option (Ctrl + H), or drag the
+history.dat filename from Explorer into the main window of MZHistoryView.
+You can select one or more history items, and then export the list into
+text/HTML/Xml file ('Save Selected Items' option). You can also copy the
+selected items to the clipboard, and then paste them to Excel or to
+OpenOffice spreadsheet.
 
 
 
@@ -326,25 +216,25 @@ Command-Line Options
 
 
 /stext <Filename>
-Save the list of all cache files into a regular text file.
+Save the list of all visited Web sites into a regular text file.
 
 /stab <Filename>
-Save the list of all cache files into a tab-delimited text file.
+Save the list of all visited Web sites into a tab-delimited text file.
 
 /scomma <Filename>
-Save the list of all cache files into a comma-delimited text file.
+Save the list of all visited Web sites into a comma-delimited text file.
 
 /stabular <Filename>
-Save the list of all cache files into a tabular text file.
+Save the list of all visited Web sites into a tabular text file.
 
 /shtml <Filename>
-Save the list of all cache files into HTML file (Horizontal).
+Save the list of all visited Web sites into HTML file (Horizontal).
 
 /sverhtml <Filename>
-Save the list of all cache files into HTML file (Vertical).
+Save the list of all visited Web sites into HTML file (Vertical).
 
 /sxml <Filename>
-Save the list of all cache files to XML file.
+Save the list of all visited Web sites to XML file.
 
 /sort <column>
 This command-line option can be used with other save options for sorting
@@ -352,98 +242,72 @@ by the desired column. If you don't specify this option, the list is
 sorted according to the last sort that you made from the user interface.
 The <column> parameter can specify the column index (0 for the first
 column, 1 for the second column, and so on) or the name of the column,
-like "Content Type" and "Filename". You can specify the '~' prefix
-character (e.g: "~URL") if you want to sort in descending order. You can
-put multiple /sort in the command-line if you want to sort by multiple
-columns.
+like "URL" and "Last Visit Date". You can specify the '~' prefix
+character (e.g: "~Last Visit Date") if you want to sort in descending
+order. You can put multiple /sort in the command-line if you want to sort
+by multiple columns.
 
 Examples:
-MozillaCacheView.exe /shtml "f:\temp\1.html" /sort 2 /sort ~1
-MozillaCacheView.exe /shtml "f:\temp\1.html" /sort "~Content Type" /sort
-"File Size"
+MozillaHistoryView.exe /shtml "f:\temp\history.html" /sort 2 /sort ~1
+MozillaHistoryView.exe /shtml "f:\temp\history.html" /sort "Last Visit
+Date"
 
 /nosort
 When you specify this command-line option, the list will be saved without
 any sorting.
 
--folder <Cache Folder>
-Start MozillaCacheView with the specified cache folder.
+-file <History Filename>
+Start MozillaHistoryView with the specified history.dat filename.
 
-/copycache <URL> <Content Type>
-Copy files from the cache into the folder specified in /CopyFilesFolder
-parameter. In the <URL> parameter, you can specify the URL of the Web
-site (for example: http://www.nirsoft.net) or empty string ("") if you
-want to copy files from all Web sites. In the <Content Type> parameter,
-you can specify full content type (like image/png), partial content type
-(like 'image') or empry string ("") if you want to copy all types of
-files.
+/UseVisitTimeFilter <0 | 1>
+Specifies whether you want to filter the history items according to the
+date/time. 0 = No, 1 = Yes
 
-/CopyFilesFolder <Folder>
-Specifies the folder to copy the cache files.
+/VisitTimeFilter <Number of days>
+Specifies the last number of days of history to load. (When
+UseVisitTimeFilter = yes)
 
-/UseWebSiteDirStructure 0 | 1
-Save the files in the directory structure of the Web site. 0 = No, 1 = Yes
+/UseFirefoxFolder <0 | 1>
 
-/UpdateModifiedTime 0 | 1
-Update the modified time of the copied files according to modified time
-in the Web server. 0 = No, 1 = Yes
+0 = Automatically locate the installation folder of Firefox.
+1 = Use the installation folder of Firefox specified in /FirefoxFolder
+command-line option.
 
-/NewNameIfExist 0 | 1
-Copy as new name if filename already exists. 0 = No, 1 = Yes
+/FirefoxFolder <Path>
+Specifies the Firefox installation folder on your system. (for using with
+/UseFirefoxFolder 1 )
 
 Examples:
-MozillaCacheView.exe -folder "C:\Documents and
-Settings\Administrator\Local Settings\Application
-Data\Mozilla\Firefox\Profiles\acf2c3u2.default\Cache"
-MozillaCacheView.exe -folder "C:\Documents and
-Settings\Administrator\Local Settings\Application
-Data\Mozilla\Firefox\Profiles\acf2c3u2.default\Cache" /shtml
+MozillaHistoryView.exe -file "C:\Documents and
+Settings\Administrator\Application
+Data\Mozilla\Profiles\test\p34kcd3y.slt\history.dat"
+MozillaHistoryView.exe -file "C:\Documents and
+Settings\Administrator\Application
+Data\Mozilla\Profiles\test\p34kcd3y.slt\history.dat" /shtml
 c:\temp\mz.html
-MozillaCacheView.exe /stext c:\temp\mz.txt
-
-Copy Cache Examples:
-* Copy all cache files of www.nirsoft.net to f:\temp in the directory
-  structure of the Web site:
-  /copycache "http://www.nirsoft.net" "" /CopyFilesFolder "f:\temp"
-  /UseWebSiteDirStructure 1
-
-
-* Copy all image cache files of www.nirsoft.net to f:\temp:
-  /copycache "http://www.nirsoft.net" "image" /CopyFilesFolder "f:\temp"
-  /UseWebSiteDirStructure 0
-
-
-* Copy all .png files from the cache to f:\temp:
-  /copycache "" "image/png" /CopyFilesFolder "f:\temp"
-  /UseWebSiteDirStructure 0
-
-
-* Copy all files from the cache to f:\temp:
-  /copycache "" "" /CopyFilesFolder "f:\temp" /UseWebSiteDirStructure 0
+MozillaHistoryView.exe /stext c:\temp\mz.txt
 
 
 
+Translating MZHistoryView to other languages
+============================================
 
-
-Translating MZCacheView to other languages
-==========================================
-
-In order to translate MZCacheView to other language, follow the
+In order to translate MZHistoryView to other language, follow the
 instructions below:
-1. Run MZCacheView with /savelangfile parameter:
-   MozillaCacheView.exe /savelangfile
-   A file named MozillaCacheView_lng.ini will be created in the folder of
-   MozillaCacheView utility.
+1. Run MZHistoryView with /savelangfile parameter:
+   MozillaHistoryView.exe /savelangfile
+   A file named MozillaHistoryView_lng.ini will be created in the folder
+   of MozillaHistoryView utility.
 2. Open the created language file in Notepad or in any other text
    editor.
 3. Translate all string entries to the desired language. Optionally,
    you can also add your name and/or a link to your Web site.
    (TranslatorName and TranslatorURL values) If you add this information,
    it'll be used in the 'About' window.
-4. After you finish the translation, Run MZCacheView, and all
+4. After you finish the translation, Run MZHistoryView, and all
    translated strings will be loaded from the language file.
-   If you want to run MZCacheView without the translation, simply rename
-   the language file, or move it to another folder.
+   If you want to run MZHistoryView without the translation, simply
+   rename the language file, or move it to another folder.
 
 
 
